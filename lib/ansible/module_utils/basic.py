@@ -965,7 +965,7 @@ class AnsibleModule(object):
         - executable (string) See documentation for subprocess.Popen().
                               Default is None.
         '''
-        if isinstance(args, list):
+        if isinstance(args, list) or isinstance(args, tuple):
             shell = False
         elif isinstance(args, basestring):
             shell = True
